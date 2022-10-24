@@ -1,11 +1,14 @@
 #include <iostream>
-using namespace std;
+usng namespace std;
 
 #include "Login.h";
 
 int main(){
   cout << "TESTING";
 
-  return 0;
+  LoginSystem LS;
 
-}
+  LS.authoriseUser();
+
+  return 0;
+} 
