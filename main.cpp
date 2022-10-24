@@ -1,5 +1,5 @@
 #include <iostream>;
-usng namespace std;
+using namespace std;
 
 #include "Login.h";
 

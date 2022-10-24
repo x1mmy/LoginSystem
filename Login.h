@@ -5,8 +5,10 @@ class LoginSystem {
   public:
 
   int authoriseUser(){
-    cout << "USER\n";
-  }
+    for(int i = 0; i < 5; i++){
+      cout << "USER\n";
+      }
+    }
 };
 
 
