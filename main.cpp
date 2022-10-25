@@ -7,8 +7,8 @@ int main(){
   
   LoginSystem LS;
   int choice; 
-  cout<< "Please select an option.\n 1. Create a new account \n 2. Login with an existing account \n";
-  cin >> choice;
+  std::cout<< "Please select an option.\n 1. Create a new account \n 2. Login with an existing account \n";
+  std::cin >> choice;
 
   if (choice == 1){
     LS.createNewUser();    
@@ -16,4 +16,4 @@ int main(){
     LS.returnExistingUser();
   }
   
- } 
+} 
