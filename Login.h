@@ -3,12 +3,21 @@ using namespace std;
 
 class LoginSystem {
   public:
-
-  int authoriseUser(){
-    for(int i = 0; i < 5; i++){
-      cout << "USER\n";
-      }
-    }
+ 
+  int createNewUser();
+  int returnExistingUser();
 };
+
+int LoginSystem::createNewUser(){
+  cout << "NEW USER";
+
+  return 0;
+}
+
+int LoginSystem::returnExistingUser(){
+  cout << "EXISTING USER";
+
+  return 0;
+}
 
 
