@@ -43,7 +43,7 @@ int LoginSystem::returnExistingUser(){
   if (fin.fail()){
     cout << "Account does not exist. ";
   }
-string testUSER, testPW;
+  string testUSER, testPW;
   while (fin.eof()){
     std::getline(fin, testUSER);
     std::getline(fin, testPW);
@@ -51,7 +51,7 @@ string testUSER, testPW;
 
   if (testUSER == returningUser && testPW == returningPassword){
     std::cout << "this account exists" << std::endl;
-  } else {
+  } else if (testUSER != returningUser && testPW != returningPassword){
    std::cout << "this account doesnt exist" << std::endl;
   }
   return 0;
