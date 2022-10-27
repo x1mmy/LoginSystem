@@ -7,6 +7,11 @@ class LoginSystem {
   public:
   string username;
   string password;
+
+  string returningUser;
+  string returningPassword;
+
+  
  
   int createNewUser();
   int returnExistingUser();
@@ -29,8 +34,26 @@ int LoginSystem::createNewUser(){
 }
 
 int LoginSystem::returnExistingUser(){
-  cout << "EXISTING USER";
+  cout << "Please enter in your username.\n"; cin >> returningUser;
+  cout << "Please enter in yout password.\n"; cin >> returningPassword;
 
+  ifstream fin;
+  fin.open("data\\" + returningUser + ".txt");
+
+  if (fin.fail()){
+    cout << "Account does not exist. ";
+  }
+string testUSER, testPW;
+  while (fin.eof()){
+    std::getline(fin, testUSER);
+    std::getline(fin, testPW);
+  }
+
+  if (testUSER == returningUser && testPW == returningPassword){
+    std::cout << "this account exists" << std::endl;
+  } else {
+   std::cout << "this account doesnt exist" << std::endl;
+  }
   return 0;
 }
 
