@@ -12,7 +12,7 @@ class LoginSystem {
   string returningPassword;
 
   
- 
+
   int createNewUser();
   int returnExistingUser();
 };
@@ -24,7 +24,7 @@ int LoginSystem::createNewUser(){
   cin >> password;
 
   ofstream fout;
-  fout.open("data\\" + username + ".txt" );
+  fout.open( username + ".txt" );
 
   fout << username << endl << password;
 
@@ -34,25 +34,26 @@ int LoginSystem::createNewUser(){
 }
 
 int LoginSystem::returnExistingUser(){
+  //User enters details
   cout << "Please enter in your username.\n"; cin >> returningUser;
-  cout << "Please enter in yout password.\n"; cin >> returningPassword;
+  cout << "Please enter in your password.\n"; cin >> returningPassword;
 
+  //opens file of user
   ifstream fin;
-  fin.open("data\\" + returningUser + ".txt");
+  fin.open( returningUser + ".txt");
 
-  if (fin.fail()){
-    cout << "Account does not exist. ";
-  }
+  //reads the values inside of the file
   string testUSER, testPW;
-  while (fin.eof()){
+  while (!fin.eof()){
     std::getline(fin, testUSER);
     std::getline(fin, testPW);
   }
 
-  if (testUSER == returningUser && testPW == returningPassword){
+  //comapares the values inside file against user input 
+  if ( returningUser == testUSER && returningPassword == testPW ){
     std::cout << "this account exists" << std::endl;
-  } else if (testUSER != returningUser && testPW != returningPassword){
-   std::cout << "this account doesnt exist" << std::endl;
+  } else {
+    std::cout << "this account doesnt exist" << std::endl;
   }
   return 0;
 }

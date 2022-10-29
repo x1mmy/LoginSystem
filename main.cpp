@@ -4,7 +4,7 @@ using namespace std;
 #include "Login.h";
 
 int main(){
-  
+  bool status; 
   LoginSystem LS;
   int choice; 
   std::cout<< "Please select an option.\n 1. Create a new account \n 2. Login with an existing account \n";
